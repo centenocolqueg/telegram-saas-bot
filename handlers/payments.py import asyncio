@@ -1,0 +1,26 @@
+import asyncio
+from database import activate_user
+from config import YAPE_NUMBER, PRICE_SOLES
+
+async def pago(update, context):
+    await update.message.reply_text(
+        f"📲 PAGO POR YAPE\n\n"
+        f"Número: {YAPE_NUMBER}\n"
+        f"Monto: S/{PRICE_SOLES}\n\n"
+        "📥 Envía tu comprobante aquí"
+    )
+
+async def recibir_pago(update, context):
+    user_id = update.effective_user.id
+
+    if update.message.photo:
+        await update.message.reply_text("⏳ Verificando pago...")
+
+        await asyncio.sleep(2)
+
+        activate_user(user_id, "basico")
+
+        await update.message.reply_text(
+            "✅ PAGO CONFIRMADO\n"
+            "🎉 ACCESO ACTIVADO"
+        )
