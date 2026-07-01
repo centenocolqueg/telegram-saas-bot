@@ -1,0 +1,19 @@
+import os
+
+# 🔐 TOKEN DEL BOT (Render lo inyecta como variable de entorno)
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+
+# 💳 CONFIGURACIÓN DE PAGO
+YAPE_NUMBER = "999888777"
+YAPE_NAME = "TU NEGOCIO"
+PRICE_SOLES = 25
+
+# 🧠 CONFIGURACIÓN DEL SISTEMA
+APP_NAME = "SECURITY CONSOLE"
+VERSION = "1.0.0"
+
+# 🔒 CONTROL DE ACCESO
+ACCESS_REQUIRED = True
+
+# ⚙️ MODO DEBUG (solo desarrollo)
+DEBUG = False
